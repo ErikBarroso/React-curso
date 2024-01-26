@@ -1,16 +1,20 @@
-import { Fragment } from 'react';
+import {  useState } from 'react';
 import './App.css'
-import ExecuteFunction from './components/ExecuteFunction';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
 
-  function showMessage(){
-    console.log("Evento do Componente Pai");
-  }
+    const [message, setMessage] = useState ("")
+    const handleMessage = (msg) => {
+      setMessage(msg)
+    }
+
   return (
       <div>
         <h1>Avançando em React</h1>
-        <ExecuteFunction myFunction={showMessage}/>
+        <Message msg={message}/>
+        <ChangeMessageState handleMessage={handleMessage} />
       </div>
   );
 }
