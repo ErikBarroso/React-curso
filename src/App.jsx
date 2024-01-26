@@ -1,13 +1,16 @@
+import { Fragment } from 'react';
 import './App.css'
-import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
 
 function App() {
+
+  function showMessage(){
+    console.log("Evento do Componente Pai");
+  }
   return (
       <div>
-        <h1>Avançando em React</h1>     
-        <Container>
-          <p>Este é o conteúdo</p>
-        </Container>    
+        <h1>Avançando em React</h1>
+        <ExecuteFunction myFunction={showMessage}/>
       </div>
   );
 }
