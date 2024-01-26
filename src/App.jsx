@@ -1,20 +1,25 @@
-import {  useState } from 'react';
 import './App.css'
-import Message from './components/Message';
-import ChangeMessageState from './components/ChangeMessageState';
+import UserDetails from './components/UserDetails';
 
 function App() {
 
-    const [message, setMessage] = useState ("")
-    const handleMessage = (msg) => {
-      setMessage(msg)
-    }
-
+    const users = [
+      { id: 1,nome: "Erik,", idade: 19, profissão: "Programador" },
+      { id: 2,nome: "Tiago,", idade: 17, profissão: "Eletricista" },
+      { id: 3,nome: "Leandro,", idade: 18, profissão: "Uber" },
+    ];
+ 
   return (
       <div>
         <h1>Avançando em React</h1>
-        <Message msg={message}/>
-        <ChangeMessageState handleMessage={handleMessage} />
+        {users.map((user) => {
+       return   <UserDetails
+            key={user.id}
+            nome = {user.nome}
+            idade = {user.idade}
+            profissão = {user.profissão}
+           />
+        })}
       </div>
   );
 }
