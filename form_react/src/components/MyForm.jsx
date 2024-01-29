@@ -6,6 +6,7 @@ const MyForm = ({user}) => {
   const [name, setName] = useState(user ? user.name : "")
   const [email, setEmail] = useState(user ? user.email : "");
   const [bio, setBio] = useState("")
+  const [role, setRole] = useState("")
 
   const handleName= (e) =>{
     //mudamos o estado da variável cada vez que digitamos algo no input
@@ -17,7 +18,8 @@ const MyForm = ({user}) => {
     setName("")
     setEmail("")
     setBio("");
-    console.log(name, email, bio);
+    setRole("")
+    console.log(name, email, bio, role);
   }
   return (
     <div>
@@ -45,7 +47,21 @@ const MyForm = ({user}) => {
         </label>
         {/* textrea */}
         <span>Bio:</span>
-        <textarea name="bio" placeholder="Descrição do usuário" onChange={(e) => setBio(e.target.value)} value ={bio}></textarea>
+        <textarea
+          name="bio"
+          placeholder="Descrição do usuário"
+          onChange={(e) => setBio(e.target.value)}
+          value={bio}
+        ></textarea>
+        {/* Select */}
+        <label>
+          <span>Função no sistema</span>
+          <select name="role" onChange={(e) => setRole(e.target.value)} value={role}>
+            <option value="user">Usuário</option>
+            <option value="editor">Editor</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </label>
         <input type="submit" value="Enviar" />
       </form>
     </div>
