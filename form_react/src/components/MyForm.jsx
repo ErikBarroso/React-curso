@@ -13,6 +13,8 @@ const MyForm = ({user}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault() //form n recarregar mas a página
+    setName("")
+    setEmail("")
   }
   return (
     <div>
