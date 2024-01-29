@@ -10,6 +10,8 @@ const MyForm = () => {
     //mudamos o estado da variável cada vez que digitamos algo no input
           setName(e.target.value);
   }
+  console.log(name)
+  console.log(email);
 
   return (
     <div>
@@ -21,7 +23,7 @@ const MyForm = () => {
         {/* Forma sugerida pela doc do react */}
         <label>
           <span>E-mail:</span>
-          <input type="email" name="email" placeholder="Digite o seu e-mail" />
+          <input type="email" name="email" placeholder="Digite o seu e-mail" onChange={(e) => setEmail(e.target.value)}/>
         </label>
         <input type="submit" value="Enviar" />
       </form>
