@@ -10,12 +10,13 @@ const MyForm = () => {
     //mudamos o estado da variável cada vez que digitamos algo no input
           setName(e.target.value);
   }
-  console.log(name)
-  console.log(email);
 
+  const handleSubmit = (event) => {
+    event.preventDefault() //form n recarregar mas a página
+  }
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Nome:</label>
           <input type="text" name="name" placeholder="Digite seu nome" onChange={handleName}/>
