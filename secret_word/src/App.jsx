@@ -38,15 +38,16 @@ function App() {
 
       setPickedWord(word)
       setPickedCategory(category)
-      setLetters(letters)
+      setLetters(wordLetters)
       setGameStage(stages[1].name)
     }
-     const verifyLetter = () => {
-       setGameStage(stages[2].name);
+     const verifyLetter = (letter) => {
+      console.log(letter);
      };
      const retry = () => {
       setGameStage(stages[0].name)
      }
+
   return (
     <div className="App">
       {gameStage === "start" && <StartScreen startGame={startGame} />}
