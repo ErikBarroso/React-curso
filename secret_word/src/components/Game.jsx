@@ -11,7 +11,7 @@ const Game = ({ verifyLetter, pickedCategory,
 
     const [letter, setLetter] = useState("");
     const letterInputRef = useRef(null)
-
+// entender como o botão manda a letra para verificar
   const handleSubmit = (e) => {
   e.preventDefault()
   verifyLetter(letter)
@@ -57,7 +57,7 @@ const Game = ({ verifyLetter, pickedCategory,
       <div className="wrongLettersContainer">
         <p>Letras já utilizadas: </p>
         {wrongLetters.map((letter, i) => (
-          <span key = {1}>{letter},</span>
+          <span key = {1}>{letter}, </span>
         ))}
       </div>
     </div>
